@@ -30,11 +30,11 @@ class Home extends StatelessWidget
           SizedBox(height: 16.0),
           Text(
             posts[index].title,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.title,
           ),
           Text(
-            posts[index].title,
-            style: Theme.of(context).textTheme.subtitle2,
+            posts[index].author,
+            style: Theme.of(context).textTheme.subhead,
           ),
           SizedBox(height: 16.0),
         ]
