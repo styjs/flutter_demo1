@@ -6,6 +6,7 @@ import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
+import 'demo/material_components.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,19 +15,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: Home(),
+      // home: MetarialComponentsDemo(),
       // home: NavigatorDemo(),
-      initialRoute: '/form',
+      initialRoute: '/mdc',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => PageDemo(title: 'Abouts'),
         '/home': (context) => Home(),
         '/form': (context) => FormDemo(),
+        '/mdc': (context) => MetarialComponentsDemo()
       },
       theme: ThemeData(
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
         splashColor: Colors.white70,
-        accentColor: Colors.white
+        accentColor: Colors.white,
+        primaryColor: Colors.yellow
       ),
     );
   }
