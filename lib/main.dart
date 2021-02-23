@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'demo/list_view_demo.dart';
-import 'demo/drawer_demo.dart';
-import 'demo/bottom_navigation_bar_demo.dart';
-import 'demo/basic_demo.dart';
-import 'demo/layout_demo.dart';
-import 'demo/view_demo.dart';
+// import 'demo/list_view_demo.dart';
+// import 'demo/drawer_demo.dart';
+// import 'demo/bottom_navigation_bar_demo.dart';
+// import 'demo/basic_demo.dart';
+// import 'demo/layout_demo.dart';
+// import 'demo/view_demo.dart';
+// import 'demo/sliver_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: Test(),
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -23,53 +24,69 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget
+class Test extends StatelessWidget
 {
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        backgroundColor: Colors.grey[100],
-        appBar: AppBar(
-          // leading: IconButton(
-          //   icon: Icon(Icons.menu),
-          //   tooltip: 'navigation',
-          //   onPressed: () => debugPrint('Navigation button is pressed!'),
-          // ),
-          title: Text('NIHAO'),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.search),
-              tooltip: 'navigation',
-              onPressed: () => debugPrint('Search button is pressed!'),
-            )
-          ],
-          elevation: 0.0,
-          bottom: TabBar(
-            tabs: <Widget>[
-              Tab(icon: Icon(Icons.local_florist)),
-              Tab(icon: Icon(Icons.local_laundry_service)),
-              Tab(icon: Icon(Icons.directions_bike)),
-              Tab(icon: Icon(Icons.view_quilt)),
-            ],
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorColor: Colors.black54,
-            indicatorWeight: 5.0,
-          ),
-        ),
-        bottomNavigationBar: BottomNavigationBarDemo(),
-        body: TabBarView(children: <Widget>[
-          // Icon(Icons.local_florist, size: 128.0, color: Colors.black12,),
-          ListViewDemo(),
-          BasicDemo(),
-          LayoutDemo(),
-          ViewDemo(),
-        ]),
-        drawer: DrawerDemo()
-      )
+    // TODO: implement build
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Text('我的世界'),
+          Image.network('https://goss2.cfp.cn/creative/vcg/nowarter800/new/VCG211160663969.jpg')
+        ],
+      ),
     );
   }
 }
 
+// class Home extends StatelessWidget
+// {
+//   @override
+//   Widget build(BuildContext context) {
+//     return DefaultTabController(
+//       length: 4,
+//       child: Scaffold(
+//         backgroundColor: Colors.grey[100],
+//         appBar: AppBar(
+//           // leading: IconButton(
+//           //   icon: Icon(Icons.menu),
+//           //   tooltip: 'navigation',
+//           //   onPressed: () => debugPrint('Navigation button is pressed!'),
+//           // ),
+//           title: Text('NIHAO'),
+//           centerTitle: true,
+//           actions: <Widget>[
+//             IconButton(
+//               icon: Icon(Icons.search),
+//               tooltip: 'navigation',
+//               onPressed: () => debugPrint('Search button is pressed!'),
+//             )
+//           ],
+//           elevation: 0.0,
+//           bottom: TabBar(
+//             tabs: <Widget>[
+//               Tab(icon: Icon(Icons.local_florist)),
+//               Tab(icon: Icon(Icons.local_laundry_service)),
+//               Tab(icon: Icon(Icons.directions_bike)),
+//               Tab(icon: Icon(Icons.view_quilt)),
+//             ],
+//             indicatorSize: TabBarIndicatorSize.label,
+//             indicatorColor: Colors.black54,
+//             indicatorWeight: 5.0,
+//           ),
+//         ),
+//         bottomNavigationBar: BottomNavigationBarDemo(),
+//         body: TabBarView(children: <Widget>[
+//           // Icon(Icons.local_florist, size: 128.0, color: Colors.black12,),
+//           ListViewDemo(),
+//           BasicDemo(),
+//           LayoutDemo(),
+//           ViewDemo(),
+//         ]),
+//         drawer: DrawerDemo()
+//       )
+//     );
+//   }
+// }
+//
