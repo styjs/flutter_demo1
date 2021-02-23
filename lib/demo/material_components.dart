@@ -5,6 +5,7 @@ import './radio_demo.dart';
 import './switch_demo.dart';
 import './slider_demo.dart';
 import './datetime_demo.dart';
+import './simple_dialog_demo.dart';
 
 class MetarialComponentsDemo extends StatelessWidget {
   @override
@@ -16,6 +17,7 @@ class MetarialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
           ListItem(title: 'DateTime', page: DateTimeDemo()),
           ListItem(title: 'Slider', page: SliderDemo()),
           ListItem(title: 'Switch', page: SwitchDemo()),
