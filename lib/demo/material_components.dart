@@ -10,6 +10,8 @@ import './alert_dialog_demo.dart';
 import './bottom_sheet_demo.dart';
 import './snack_bar_demo.dart';
 import './expansionPanel.dart';
+import '../mdc/chip_demo.dart';
+import '../mdc/data_table.dart';
 
 class MetarialComponentsDemo extends StatelessWidget {
   @override
@@ -21,6 +23,8 @@ class MetarialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'DataTable', page: DataTableDemo()),
+          ListItem(title: 'Chip', page: ChipDemo()),
           ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
           ListItem(title: 'SnackBar', page: SnackBarDemo()),
           ListItem(title: 'BottomSheet', page: BottomSheetDemo()),

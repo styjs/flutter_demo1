@@ -1,6 +1,6 @@
 class Post
 {
-  const Post({
+  Post({
     this.title,
     this.author,
     this.imageUrl,
@@ -11,6 +11,8 @@ class Post
   final String author;
   final String imageUrl;
   final String description;
+
+  bool selected = false;
 }
 
 final List<Post> posts = [
