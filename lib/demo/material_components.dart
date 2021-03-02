@@ -6,6 +6,10 @@ import './switch_demo.dart';
 import './slider_demo.dart';
 import './datetime_demo.dart';
 import './simple_dialog_demo.dart';
+import './alert_dialog_demo.dart';
+import './bottom_sheet_demo.dart';
+import './snack_bar_demo.dart';
+import './expansionPanel.dart';
 
 class MetarialComponentsDemo extends StatelessWidget {
   @override
@@ -17,6 +21,10 @@ class MetarialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
+          ListItem(title: 'SnackBar', page: SnackBarDemo()),
+          ListItem(title: 'BottomSheet', page: BottomSheetDemo()),
+          ListItem(title: 'AlertDialog', page: AlertDialogDemo()),
           ListItem(title: 'SimpleDialog', page: SimpleDialogDemo()),
           ListItem(title: 'DateTime', page: DateTimeDemo()),
           ListItem(title: 'Slider', page: SliderDemo()),
