@@ -32,26 +32,31 @@ class _DataTableDemoState extends State<DataTableDemo> {
               columns: [
                 DataColumn(
                   label: Text('Title'),
-
+                  // 是否是升序
                   onSort: (int index, bool ascending) {
+                    print('ascending $ascending');
                     setState(() {
                       _sortColumnIndex = index;
                       _sortAscending = ascending;
-
+                      print(posts.map((e) => e.title));
                       posts.sort((a, b) {
-                        if (!ascending) {
-                          final c = a;
-                          a = b;
-                          b = c;
-                        }
+                        // if (!ascending) {
+                        //   final c = a;
+                        //   a = b;
+                        //   b = c;
+                        // }
 
-                        return a.title.length.compareTo(b.title.length);
+                        // return a.title.length.compareTo(b.title.length);
+                        // 和上面的等同
+                        if (!ascending) return b.title.length.compareTo(a.title.length);
+                        else return a.title.length.compareTo(b.title.length);
                       });
+                      print(posts.map((e) => e.title));
                     });
                   }
                 ),
                 DataColumn(label: Text('Author')),
-                DataColumn(label: Text('Image')),
+                // DataColumn(label: Text('Image')),
               ],
               rows: posts.map((item) => DataRow(
                 selected: item.selected,
@@ -66,7 +71,7 @@ class _DataTableDemoState extends State<DataTableDemo> {
                 cells: [
                   DataCell(Text(item.title)),
                   DataCell(Text(item.author)),
-                  DataCell(Image.network(item.imageUrl))
+                  // DataCell(Image.network(item.imageUrl))
                 ],
               )).toList()
             )

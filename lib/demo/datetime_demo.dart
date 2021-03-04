@@ -65,6 +65,7 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
                   child: Row(
                     children: <Widget>[
                       Text(DateFormat.yMd().format(selectedDate)),
+                      Icon(Icons.arrow_drop_down),
                       Icon(Icons.arrow_drop_down)
                     ],
                   )

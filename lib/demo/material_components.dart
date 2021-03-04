@@ -12,6 +12,9 @@ import './snack_bar_demo.dart';
 import './expansionPanel.dart';
 import '../mdc/chip_demo.dart';
 import '../mdc/data_table.dart';
+import '../mdc/pagination_data_table.dart';
+import '../mdc/card_demo.dart';
+import '../mdc/stepper_demo.dart';
 
 class MetarialComponentsDemo extends StatelessWidget {
   @override
@@ -23,6 +26,9 @@ class MetarialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'Stepper', page: StepperDemo()),
+          ListItem(title: 'Card', page: CardDemo()),
+          ListItem(title: 'PagenationDataTable', page: PagenationDataTableDemo()),
           ListItem(title: 'DataTable', page: DataTableDemo()),
           ListItem(title: 'Chip', page: ChipDemo()),
           ListItem(title: 'ExpansionPanel', page: ExpansionPanelDemo()),
