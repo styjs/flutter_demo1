@@ -15,6 +15,7 @@ import '../mdc/data_table.dart';
 import '../mdc/pagination_data_table.dart';
 import '../mdc/card_demo.dart';
 import '../mdc/stepper_demo.dart';
+import '../state/state_management_demo.dart';
 
 class MetarialComponentsDemo extends StatelessWidget {
   @override
@@ -26,6 +27,7 @@ class MetarialComponentsDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(title: 'StateManagement', page: StateManagementDemo()),
           ListItem(title: 'Stepper', page: StepperDemo()),
           ListItem(title: 'Card', page: CardDemo()),
           ListItem(title: 'PagenationDataTable', page: PagenationDataTableDemo()),
