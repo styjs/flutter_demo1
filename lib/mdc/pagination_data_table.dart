@@ -51,6 +51,7 @@ class _PagenationDataTableDemoState extends State<PagenationDataTableDemo> {
                   }
                 ),
                 DataColumn(label: Text('Author')),
+                DataColumn(label: Text('Image')),
                 // DataColumn(label: Text('Image')),
               ],
             )
@@ -74,6 +75,7 @@ class PostsDataSource extends DataTableSource
       cells: <DataCell>[
         DataCell(Text(post.title)),
         DataCell(Text(post.author)),
+        DataCell(Image.network(post.imageUrl)),
         // DataCell(Image.network(post.imageUrl)),
       ]
     );
