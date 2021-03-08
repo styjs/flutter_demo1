@@ -1,11 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-// scoped_model
-class StateManagementDemo extends StatelessWidget {
+// inherite
+
+class StateManagementDemo extends StatefulWidget {
+  @override
+  _StateManagementDemoState createState() => _StateManagementDemoState();
+}
+
+class _StateManagementDemoState extends State<StateManagementDemo> {
+  int _counter = 0;
+
+  void _addCounter () {
+    setState(() {
+      _counter++;
+      // _counter = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ScopedModel<CounterModel>(
-      model: CounterModel(),
+    return CounterProvider(
+      counter: _counter,
+      increseaCounter: _addCounter,
       child: Scaffold(
         appBar: AppBar(
           title: Text('StateManagement'),
@@ -26,15 +41,16 @@ class StateManagementDemo extends StatelessWidget {
           ],
         ),
 
-        floatingActionButton: ScopedModelDescendant<CounterModel>(
-          rebuildOnChange: false,
-          builder: (context, _, model) => FloatingActionButton(
-            child: Icon(Icons.restore),
-            tooltip: 'Add4',
-            backgroundColor: Theme.of(context).primaryColor,
-            onPressed: model.restore,
-          )
-        ) ,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.restore),
+          tooltip: 'Add3',
+          backgroundColor: Theme.of(context).primaryColor,
+          onPressed: () {
+            setState(() {
+              _counter = 0;
+            });
+          },
+        ),
       ),
     );
   }
@@ -62,15 +78,12 @@ class CounterDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final counter = CounterProvider.of(context).counter;
-    // final _onPressed = CounterProvider.of(context).increseaCounter;
+    final counter = CounterProvider.of(context).counter;
+    final _onPressed = CounterProvider.of(context).increseaCounter;
 
-    return ScopedModelDescendant<CounterModel>(
-      builder: (context, _, model) => ActionChip(
-        label: Text('${model.counter}'),
-        onPressed: model.increasement,
-      ),
-
+    return ActionChip(
+      label: Text('$counter'),
+      onPressed: _onPressed,
     );
   }
 }
@@ -93,21 +106,5 @@ class CounterProvider extends InheritedWidget {
   @override
   bool updateShouldNotify(covariant InheritedWidget oldWidget) {
     return true;
-  }
-}
-
-class CounterModel extends Model {
-  int _counter = 0;
-
-  int get counter => _counter;
-
-  void restore() {
-    _counter = 0;
-    notifyListeners();
-  }
-
-  void increasement () {
-    _counter++;
-    notifyListeners();
   }
 }
