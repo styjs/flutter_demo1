@@ -7,6 +7,7 @@ import 'demo/layout_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'stream/stream_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,13 +18,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: MetarialComponentsDemo(),
       // home: NavigatorDemo(),
-      initialRoute: '/mdc',
+      initialRoute: '/stream',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => PageDemo(title: 'Abouts'),
         '/home': (context) => Home(),
         '/form': (context) => FormDemo(),
-        '/mdc': (context) => MetarialComponentsDemo()
+        '/mdc': (context) => MetarialComponentsDemo(),
+        '/stream': (context) => StreamDemo()
       },
       theme: ThemeData(
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
