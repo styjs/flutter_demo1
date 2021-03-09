@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'bloc/bloc_demo.dart';
 import 'demo/list_view_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottom_navigation_bar_demo.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: MetarialComponentsDemo(),
       // home: NavigatorDemo(),
-      initialRoute: '/rxdart',
+      initialRoute: '/bloc',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => PageDemo(title: 'Abouts'),
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         '/form': (context) => FormDemo(),
         '/mdc': (context) => MetarialComponentsDemo(),
         '/stream': (context) => StreamDemo(),
-        '/rxdart': (context) => RxDartDemo()
+        '/rxdart': (context) => RxDartDemo(),
+        '/bloc': (context) => BlocDemo()
       },
       theme: ThemeData(
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
