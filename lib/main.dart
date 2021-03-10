@@ -8,6 +8,7 @@ import 'demo/layout_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'http/http_demo.dart';
 import 'rxdart/rxdart-demo.dart';
 import 'stream/stream_demo.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: MetarialComponentsDemo(),
       // home: NavigatorDemo(),
-      initialRoute: '/bloc',
+      initialRoute: '/http',
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => PageDemo(title: 'Abouts'),
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         '/mdc': (context) => MetarialComponentsDemo(),
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxDartDemo(),
-        '/bloc': (context) => BlocDemo()
+        '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo()
       },
       theme: ThemeData(
         highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
